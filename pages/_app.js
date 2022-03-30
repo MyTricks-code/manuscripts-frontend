@@ -1,10 +1,11 @@
 import App from "next/app"
 import Head from "next/head"
-import "../assets/css/style.css"
+// import "../assets/css/style.css"
 import { createContext } from "react"
 import { fetchAPI } from "../lib/api"
 import { getStrapiMedia } from "../lib/media"
-import "../assets/css/index.css"
+import "../styles/globals.css"
+import NextNProgress from "nextjs-progressbar";
 
 // Store Strapi Global object in context
 export const GlobalContext = createContext({})
@@ -21,6 +22,7 @@ const MyApp = ({ Component, pageProps }) => {
         />
       </Head>
       <GlobalContext.Provider value={global.attributes}>
+        <NextNProgress color="red"/>
         <Component {...pageProps} />
       </GlobalContext.Provider>
     </>

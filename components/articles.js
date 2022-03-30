@@ -1,39 +1,53 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import Card from "./card"
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { fetchAPI } from "../lib/api";
 
-const Articles = ({ articles }) => {
-  const leftArticlesCount = Math.ceil(articles.length / 5)
-  const leftArticles = articles.slice(0, leftArticlesCount)
-  const rightArticles = articles.slice(leftArticlesCount, articles.length)
+const Articles = ({ articles, metaData}) => {
+  
+  const [Posts, setPosts] = useState(articles)
+  const getMorePost = async()=>{
+    const res = await fetchAPI("/articles", { populate: "*" , sort: ['id:DESC'], pagination: {
+      start: Posts.length,
+      limit: 5,
+    }})
+    const newPost = await res.data
+    setPosts(Posts => [...Posts, ...newPost])
+  }
 
+  const [hasMore, setHasMore] = useState(true)
+  useEffect(()=>{
+    setHasMore(metaData.total > Posts.length ? true: false)
+  }, [Posts])
+  
   return (
-    <div>
-      <div className="uk-child-width-1-2@s" data-uk-grid="true">
-        <div>
-          {leftArticles.map((article, i) => {
+      <div>
+          {/* {articles.map((articles) => { */}
+          <InfiniteScroll
+            dataLength={Posts.length}
+            next = {getMorePost}
+            hasMore = {hasMore}
+            loader = {<h4>Loading</h4>}
+            endMessage = {
+              <p>This is the End</p>
+            }
+            className = 'mt-8 grid align-between grid-cols-1 gap-10 lg:grid-cols-2'
+          >
+          {Posts.map((articles) => {
             return (
+            <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 m-4">
               <Card
-                article={article}
-                key={`article__left__${article.attributes.slug}`}
-              />
+                article={articles}
+                key={`article__left__${articles.attributes.slug}`}
+                />
+            </div>
             )
           })}
-        </div>
-        <div>
-          <div className="uk-child-width-1-2@m uk-grid-match" data-uk-grid>
-            {rightArticles.map((article, i) => {
-              return (
-                <Card
-                  article={article}
-                  key={`article__left__${article.attributes.slug}`}
-                />
-              )
-            })}
-          </div>
-        </div>
+          </InfiniteScroll>
       </div>
-    </div>
+    
   )
 }
+
 
 export default Articles
