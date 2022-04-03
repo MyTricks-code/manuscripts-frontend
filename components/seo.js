@@ -22,6 +22,7 @@ const Seo = ({ seo }) => {
       {fullSeo.metaTitle && (
         <>
           <title>{fullSeo.metaTitle}</title>
+          <link rel="icon" href="logo.png" />
           <meta property="og:title" content={fullSeo.metaTitle} />
           <meta name="twitter:title" content={fullSeo.metaTitle} />
         </>

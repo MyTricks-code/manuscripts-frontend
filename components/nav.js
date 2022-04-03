@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 const Nav = ({ categories }) => {
   return (
@@ -7,8 +8,7 @@ const Nav = ({ categories }) => {
       <nav className="p-5 sticky bg-white shadow md:flex md:items-center md:justify-between z-[1]">
         <div className="flex justify-between items-center ">
           <span className="text-2xl font-bold cursor-pointer">
-            <img className="h-10 inline"
-              src="logo.png" height="50px" width="50px" />
+            <img src={"/logo.png"} height="50px" width="50px" alt="logo" className="h-10 inline"/>
             <Link href="/" ><a className="no-underline " style={{ textDecoration: 'none' }}>Manuscripts</a></Link>
           </span>
 
