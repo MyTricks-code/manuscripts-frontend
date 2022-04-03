@@ -2,7 +2,7 @@ import ReactMarkdown from "react-markdown"
 import Moment from "react-moment"
 import { fetchAPI } from "../../lib/api"
 import Layout from "../../components/layout"
-import NextImage from "../../components/image"
+import Articles from "../../components/articles"
 import Seo from "../../components/seo"
 import { getStrapiMedia } from "../../lib/media"
 
@@ -22,30 +22,31 @@ const Article = ({ article, categories }) => {
   
     <Layout categories={categories.data}>
       <Seo seo={seo} />
+      <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8 my-2">
       <div
         id="banner"
-        className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
+        className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light rounded uk-padding uk-margin"
         data-src={imageUrl}
         data-srcset={imageUrl}
         data-uk-img
       >
-        <h1>{article.attributes.title}</h1>
       </div>
-      <div className="uk-section">
+        <h1 className="text-xl lg:text-3xl font-semibold flex align-center justify-center my-2">{article.attributes.title}</h1>
+      <div className="flex align-center display center my-2">
         <div className="uk-container uk-container-small">
           <ReactMarkdown
             source={article.attributes.content}
             escapeHtml={false}
           />
-          <hr className="uk-divider-small" />
+          <hr className="mb-5 my-2" />
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
-            <div>
+            {/* <div>
               {article.attributes.author.picture && (
                 <NextImage image={article.attributes.author.picture} />
               )}
-            </div>
+            </div> */}
             <div className="uk-width-expand">
-              <p className="uk-margin-remove-bottom">
+              <p className="uk-margin-remove-bottom ">
                 Thanks for reading
               </p>
               <p className="uk-text-meta uk-margin-remove-top">
@@ -56,6 +57,7 @@ const Article = ({ article, categories }) => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </Layout>
   )
@@ -84,7 +86,7 @@ export async function getStaticProps({ params }) {
   const categoriesRes = await fetchAPI("/categories")
 
   return {
-    props: { article: articlesRes.data[0], categories: categoriesRes },
+    props: { article: articlesRes.data[0], categories: categoriesRes},
     revalidate: 1,
   }
 }

@@ -9,7 +9,7 @@ const Articles = ({ articles, metaData}) => {
   const getMorePost = async()=>{
     const res = await fetchAPI("/articles", { populate: "*" , sort: ['id:DESC'], pagination: {
       start: Posts.length,
-      limit: 5,
+      limit: 6,
     }})
     const newPost = await res.data
     setPosts(Posts => [...Posts, ...newPost])
@@ -27,9 +27,11 @@ const Articles = ({ articles, metaData}) => {
             dataLength={Posts.length}
             next = {getMorePost}
             hasMore = {hasMore}
-            loader = {<h4>Loading</h4>}
+            loader = {<h4 className="text-center"><img src="loading.gif" alt="loading.." width="50px" height="50px" className="text-center"/></h4>}
             endMessage = {
-              <p>This is the End</p>
+              <p className="text-center">Holy Moly! You have reached the End.
+                <img src="/accomplish.gif" alt="accomplish" />
+              </p>
             }
             className = 'mt-8 grid align-between grid-cols-1 gap-10 lg:grid-cols-2'
           >

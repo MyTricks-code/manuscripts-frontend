@@ -3,7 +3,7 @@ import { fetchAPI } from "../../lib/api"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 
-const Category = ({ category, categories }) => {
+const Category = ({ category, categories, metaData }) => {
   const seo = {
     metaTitle: category.attributes.name,
     metaDescription: `All ${category.attributes.name} articles`,
@@ -14,8 +14,8 @@ const Category = ({ category, categories }) => {
       <Seo seo={seo} />
       <div className="uk-section">
         <div className="uk-container uk-container-large">
-          <h1 color="white" >{category.attributes.name.uppercase}</h1>
-          <Articles articles={category.attributes.articles.data} />
+          <h1 color="white" className="text-2xl lg:text-4xl font-bold text-center" >{category.attributes.name}</h1>
+          <Articles articles={category.attributes.articles.data} metaData={metaData} />
         </div>
       </div>
     </Layout>
@@ -50,6 +50,7 @@ export async function getStaticProps({ params }) {
     props: {
       category: matchingCategories.data[0],
       categories: allCategories,
+      metaData: matchingCategories.meta.pagination
     },
     revalidate: 1,
   }

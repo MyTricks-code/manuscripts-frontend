@@ -8,7 +8,7 @@ const Nav = ({ categories }) => {
         <div className="flex justify-between items-center ">
           <span className="text-2xl font-bold cursor-pointer">
             <img className="h-10 inline"
-              src="https://tailwindcss.com/_next/static/media/social-square.b622e290e82093c36cca57092ffe494f.jpg" />
+              src="logo.png" height="50px" width="50px" />
             <Link href="/" ><a className="no-underline " style={{ textDecoration: 'none' }}>Manuscripts</a></Link>
           </span>
 
