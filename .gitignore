@@ -37,3 +37,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+*.pack
+.next/static/chunks/webpack.js
+.next/static/chunks/webpack.js

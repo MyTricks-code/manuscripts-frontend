@@ -1,5 +1,5 @@
-import App from "next/app"
-import Head from "next/head"
+import App from 'next/app'
+import Head from 'next/head'
 // import "../assets/css/style.css"
 import { createContext } from "react"
 import { fetchAPI } from "../lib/api"
