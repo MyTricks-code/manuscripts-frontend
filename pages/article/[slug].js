@@ -7,7 +7,7 @@ import Seo from "../../components/seo"
 import { getStrapiMedia } from "../../lib/media"
 
 
-const Article = ({ article, categories }) => {
+const Article = ({ article, categories, metaData, articles }) => {
   const imageUrl = getStrapiMedia(article.attributes.image)
 
   const seo = {
@@ -31,12 +31,14 @@ const Article = ({ article, categories }) => {
         data-uk-img
       >
       </div>
-        <h1 className="text-xl lg:text-3xl font-semibold flex align-center justify-center my-2">{article.attributes.title}</h1>
+        <h1 className="text-xl lg:text-3xl font-bold flex align-center justify-center my-2  ">{article.attributes.title}</h1>
       <div className="flex align-center display center my-2">
         <div className="uk-container uk-container-small">
           <ReactMarkdown
             source={article.attributes.content}
             escapeHtml={false}
+            className = "prose prose-lg xl:prose-xl prose prose-img:rounded-xl prose-h1:underline prose-a:bg-cyan-200 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline"
+            style={{ textDecoration: 'none' }}
           />
           <hr className="mb-5 my-2" />
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
@@ -59,6 +61,11 @@ const Article = ({ article, categories }) => {
         </div>
       </div>
       </div>
+      <div className="container mx-auto">
+        <h3 className="text-2xl font-semibold align-center justify-center uk-container">More from us</h3>
+        <Articles articles={articles} metaData={metaData} />
+      </div>
+      
     </Layout>
   )
 }
@@ -83,11 +90,13 @@ export async function getStaticProps({ params }) {
     },
     populate: "*",
   })
+
   const categoriesRes = await fetchAPI("/categories")
 
   return {
-    props: { article: articlesRes.data[0], categories: categoriesRes},
+    props: { article: articlesRes.data[0], categories: categoriesRes, articles: articlesRes.data, metaData: articlesRes.meta.pagination},
     revalidate: 1,
+    
   }
 }
 

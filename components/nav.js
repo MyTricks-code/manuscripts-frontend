@@ -21,9 +21,7 @@ const Nav = ({ categories }) => {
           {categories.map((category) => {
             return (
               <li key={category.id}>
-                <Link href={`/category/${category.attributes.slug}`}>
-                  <a className="dropdown-item" color="black">{category.attributes.name}</a>
-                </Link>
+                  <a className="dropdown-item" href={`/category/${category.attributes.slug}`} color="black">{category.attributes.name}</a>
               </li>
             )
           })}  
