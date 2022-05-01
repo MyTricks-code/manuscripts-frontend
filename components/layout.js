@@ -150,7 +150,7 @@ const Layout = ({ children, categories, metaData}) => (
     </div>
   </div>
   <div className="text-center p-6 bg-gray-200">
-    <span>© 2021 Copyright:</span>
+    <span>© 2022 Copyright:</span>
     <Link href="/"><a className="text-gray-600 font-semibold" >Manuscripts</a></Link>
   </div>
 </footer>
