@@ -37,7 +37,7 @@ const Article = ({ article, categories, metaData, articles }) => {
           <ReactMarkdown
             source={article.attributes.content}
             escapeHtml={false}
-            className = "prose prose-lg xl:prose-xl prose prose-img:rounded-xl prose-h1:underline prose-a:bg-cyan-200 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline"
+            className = "prose prose-lg xl:prose-xl prose prose-img:rounded-xl prose-h1:underline prose-a:bg-cyan-200 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline prose-code:max-w-xl"
             style={{ textDecoration: 'none' }}
           />
           <hr className="mb-5 my-2" />
@@ -72,15 +72,18 @@ const Article = ({ article, categories, metaData, articles }) => {
 
 export async function getStaticPaths() {
   const articlesRes = await fetchAPI("/articles", { fields: ["slug"] })
-
+  
   return {
     paths: articlesRes.data.map((article) => ({
       params: {
         slug: article.attributes.slug,
+        
       },
     })),
     fallback: false,
   }
+
+
 }
 
 export async function getStaticProps({ params }) {
@@ -93,8 +96,14 @@ export async function getStaticProps({ params }) {
 
   const categoriesRes = await fetchAPI("/categories")
 
+  const articlesResAllData = await fetchAPI("/articles",{ populate: "*" , sort: ['id:DESC'], pagination: {
+    start: 0,
+    limit: 6,
+  }})
+  
   return {
-    props: { article: articlesRes.data[0], categories: categoriesRes, articles: articlesRes.data, metaData: articlesRes.meta.pagination},
+    props: { article: articlesRes.data[0], categories: categoriesRes, articles: articlesResAllData.data,
+      metaData: articlesResAllData.meta.pagination},
     revalidate: 1,
     
   }

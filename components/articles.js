@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react"
 import Card from "./card"
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchAPI } from "../lib/api";
-
 const Articles = ({ articles, metaData}) => {
   
   const [Posts, setPosts] = useState(articles)
@@ -19,10 +18,10 @@ const Articles = ({ articles, metaData}) => {
   useEffect(()=>{
     setHasMore(metaData.total > Posts.length ? true: false)
   }, [Posts])
-  
+
   return (
       <div>
-          {/* {articles.map((articles) => { */}
+        
           <InfiniteScroll
             dataLength={Posts.length}
             next = {getMorePost}

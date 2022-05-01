@@ -15,7 +15,7 @@ const Nav = ({ categories }) => {
           <span className="text-3xl cursor-pointer mx-2 md:hidden block">
             <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
           </span>
-          <div class="dropdown ml-7 mr-2 bg-cyan-400 font-medium text-xl rounded px-2 lg:px-3 py-2y lg:py-2">
+          <div class="dropdown ml-7 mr-2 bg-cyan-300 font-medium text-xl rounded px-2 lg:px-3 py-2y lg:py-2 hover:bg-blue-200 duration-500 text-black">
           <span>Categories&#8595;</span>
           <div class="dropdown-content">
           {categories.map((category) => {
