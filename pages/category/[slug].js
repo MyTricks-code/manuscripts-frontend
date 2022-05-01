@@ -6,7 +6,7 @@ import Seo from "../../components/seo"
 const Category = ({ category, categories, metaData }) => {
   const seo = {
     metaTitle: category.attributes.name,
-    metaDescription: `All ${category.attributes.name} articles`,
+    metaDescription: `Articles under ${category.attributes.name} from manuscripts. Awesome, useful and informative ${category.attributes.name} articles. -Manuscripts`,
   }
 
   return (
