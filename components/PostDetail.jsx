@@ -101,7 +101,7 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
                 categoryPost.map((item)=>{
                   return (
                   <>
-                   <Link href={`/category/${item.attributes.slug}`} key={Math.random()}><p className='bg-white hover:font-bold shadow-sm text-lg my-2 rounded text-center'>{item.attributes.name}</p>
+                   <Link href={`/category/${item.attributes.slug}`}><p className='bg-white hover:font-bold shadow-sm text-lg my-2 rounded text-center'>{item.attributes.name}</p>
                   </Link>
                   </>
                   )
