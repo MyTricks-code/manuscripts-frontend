@@ -98,10 +98,12 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
             <h3 className='mt-2 text-lg font-bold text-gray-700'>Browse Categories</h3>
             <div className='mx-2'>
               {
-                categoryPost.slice(0,6).map((item)=>{
-                  return(
+                categoryPost.map((item)=>{
+                  return (
+                  <>
                    <Link href={`/category/${item.attributes.slug}`} key={Math.random()}><p className='bg-white hover:font-bold shadow-sm text-lg my-2 rounded text-center'>{item.attributes.name}</p>
                   </Link>
+                  </>
                   )
                 })
               }
