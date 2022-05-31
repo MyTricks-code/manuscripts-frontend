@@ -5,10 +5,7 @@ import Seo from '../../components/Seo'
 
 const slug = ({category , posts, meta}) => {
    
-    const [Posts, setPosts] = useState(posts)
-  
-  
-    const [Meta , setMeta] = useState(meta)
+    
     
     // const searchFunction = async()=>{
     //   console.log("clicked")
@@ -40,9 +37,9 @@ const slug = ({category , posts, meta}) => {
         <div className="border-slate-400">
         </div>
         {
-          Meta == 0 ? <p className='text-center'>
+          meta == 0 ? <p className='text-center'>
             No Data found
-          </p> : Posts.map((item)=>{
+          </p> : posts.map((item)=>{
             return (
             <>
             {/* {item.attributes.title} */}
