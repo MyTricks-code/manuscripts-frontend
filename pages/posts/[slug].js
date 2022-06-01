@@ -16,7 +16,7 @@ export async function getServerSideProps(context) {
     let headers = {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
     }
-    let url = await fetch(`${process.env.STRAPI_URL}/api/posts?filters[slug]=` + context.query.slug + "&populate=*" , {headers:headers})
+    let url = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/posts?filters[slug]=` + context.query.slug + "&populate=*" , {headers:headers})
 
     let postUrl = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/posts?&populate=*&sort=id:DESC`, { headers: headers})
 

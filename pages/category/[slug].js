@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import NewsCard from '../../components/NewsCard'
 import CategoryCard from '../../components/CategoryCard'
 import Seo from '../../components/Seo'
 
