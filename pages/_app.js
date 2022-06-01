@@ -2,8 +2,9 @@ import Navbar from '../components/Navbar'
 import '../styles/globals.css'
 import Head from "next/head"
 import NextNProgress from "nextjs-progressbar";
+import Footer from '../components/Footer';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps}) {
   return( 
   <>
   <Head>
@@ -17,7 +18,8 @@ function MyApp({ Component, pageProps }) {
   height={3}
   showOnShallow={true}
   />
-  <Component {...pageProps} />
+  <Component {...pageProps}  />
+  <Footer/>
   </>
   )
 }

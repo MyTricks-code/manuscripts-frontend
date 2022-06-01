@@ -147,11 +147,11 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
             <article>
               <div 
               
-              className='w-full flex align-middle justify-center mb-4 border-b-2 border-gray-500 mx-2'>
+              className='flex align-middle justify-center mb-4 border-b-2 border-gray-500 mx-2'>
                 <ReactMarkdown
                   children={post.attributes.content}
                   escapeHtml={false}
-                  className="prose lg:prose-xl prose-h1:underline prose-a:bg-cyan-200 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline "
+                  className="prose-sm lg:prose-xl prose-h1:underline prose-a:bg-cyan-200 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline "
                   style={{ textDecoration: 'none' }}
                 />
               </div>
@@ -169,7 +169,7 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
             <VKShareButton url={url}><VKIcon size={32} round={true} /></VKShareButton>
           </div>
         </div>
-        <div className="w-52 px-2 bg-gray-200 shadow-sm border-l-2 hidden md:flex lg:ml-2">
+        <div className="w-52 px-0 bg-gray-200 shadow-sm border-l-2 hidden md:flex  ml-0 lg:ml-2">
         <div className='mt-4'>
           <h3 className='text-2xl font-semibold'>Table of contents</h3>
           <div className='border-l-4 border-blue-500'>

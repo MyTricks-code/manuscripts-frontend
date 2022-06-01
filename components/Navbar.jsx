@@ -1,10 +1,9 @@
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import NavLink from 'next/link'
-import { useTheme } from 'next-themes'
 
 
-const Navbar = () => {
+const Navbar = ({category}) => {
 
   // const [mounted, setMounted] = useState(false);
   // useEffect(() => {
@@ -40,9 +39,9 @@ const Navbar = () => {
   // }
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark navbar-sticky shadow-xl 0 w-full dark:bg-white ">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark navbar-sticky shadow-xl dark:bg-white">
         <div className="container-fluid">
-          <img src="/images/logo.png" alt="Manuscripts.tech" className='mr-2' width={50} height={50} /><NavLink href="/"><a className="navbar-brand poppins font-bold" href="/">Manuscripts</a></NavLink>
+          <NavLink href="/"><img src="/images/logo.png" alt="Manuscripts.tech" className='mr-2' width={50} height={50} /></NavLink><NavLink href="/"><a className="navbar-brand poppins font-bold" href="/">Manuscripts</a></NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -50,7 +49,7 @@ const Navbar = () => {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <div className="nav-item">
                 <div className="btn-group dropstart">
-                  <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button type="button" className="btn btn-secondary dropdown-toggle mt-2 lg:mt-0 mr-16" data-bs-toggle="dropdown" aria-expanded="false">
                     Category
                   </button>
                   <ul className="dropdown-menu text-center max-h-30">
