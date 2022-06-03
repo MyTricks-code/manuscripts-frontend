@@ -39,7 +39,7 @@ const Navbar = ({category}) => {
   // }
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark navbar-sticky shadow-xl dark:bg-white">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow-xl ">
         <div className="container-fluid">
           <NavLink href="/"><img src="/images/logo.png" alt="Manuscripts.tech" className='mr-2' width={50} height={50} /></NavLink><NavLink href="/"><a className="navbar-brand poppins font-bold" href="/">Manuscripts</a></NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@ const Navbar = ({category}) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <div className="nav-item">
+              {/* <div className="nav-item">
                 <div className="btn-group dropstart">
                   <button type="button" className="btn btn-secondary dropdown-toggle mt-2 lg:mt-0 mr-16" data-bs-toggle="dropdown" aria-expanded="false">
                     Category
@@ -60,7 +60,7 @@ const Navbar = ({category}) => {
                 </div>
 
 
-              </div>
+              </div> */}
               <li className="nav-item">
                 <NavLink href="/" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white'>Home</a></NavLink>
               </li>

@@ -151,9 +151,9 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
                 <ReactMarkdown
                   children={post.attributes.content}
                   escapeHtml={false}
-                  className="prose-sm lg:prose-xl prose-h1:underline prose-a:bg-cyan-200 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline "
+                  className = "prose prose-lg xl:prose-xl prose-img:border-2px prose-img:border-gray-600 prose-h1:underline prose-a:bg-cyan-200 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline prose-code:max-w-xl"
                   style={{ textDecoration: 'none' }}
-                />
+                 /> 
               </div>
             </article>
             <small className='text-center w-full flex justify-center align-bottom'>Thanks for Reading</small>

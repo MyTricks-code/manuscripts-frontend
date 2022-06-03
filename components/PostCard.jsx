@@ -4,7 +4,7 @@ import Moment from 'react-moment'
 
 const PostCard = ({ item }) => {
   return (
-    <div className='shadow-lg bg-white rounded-md mx-3'>
+    <div className='shadow-lg bg-white rounded-md mx-3 mb-6'>
       <Link href={`/posts/${item.attributes.slug}`}>
         <section className="hover:cursor-pointer relative mb-1">
           <div className="md:pb-12 relative overflow-hidden p-1 mb-2 rounded " key={item.attributes.slug}>

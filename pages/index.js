@@ -24,6 +24,7 @@ export default function Home(props) {
       headers : headers
     })
     const searchResult = await searchUrl.json()
+    document.getElementById("other-item-cards").classList.add("hidden")
     console.log(searchResult)
     setPosts(searchResult.data)
     setMeta(searchResult.meta.pagination.total)
@@ -64,16 +65,18 @@ export default function Home(props) {
         hasMore={hasMore}
         loader={<div className='flex align-middle justify-center mt-5'><Loader/></div>}
         endMessage={
-          <p className="text-center">Holy Moly! You have reached the End.
+          <p className="text-center font-bold px-2 m-2">Holy Moly! You have reached the End.
           <img src="/images/accomplish.gif" alt="accomplish" />
         </p>
         }
         className="mt-8 grid align-between grid-cols-1 lg:grid-cols-3"
     >
-        <div className="border-r-4 border-slate-400">
+        <div id="other-item-cards" className="border px-2">
+        <div className="border-r-4 border-b-slate-400 lg:border-slate-400">
         <FeaturedPost item={Posts} key={Math.random()}/>
-        <h1 className='text-4xl font-bold underline text-center'>News</h1>
-        <NewsCard item={props.post}/>
+        {/* <h1 className='text-4xl font-bold underline text-center'>News</h1> */}
+        {/* <NewsCard item={props.post}/> */}
+        </div>
         </div>
         
         
