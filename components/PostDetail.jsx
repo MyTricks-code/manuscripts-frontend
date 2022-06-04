@@ -70,6 +70,7 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
   
   return (
     <>
+    <div className='mt-16'>
     <Seo item={post}/>
       <div className="flex min-h-screen">
         <div className="w-52 bg-gray-200 shadow-md border-l-2 hidden lg:flex mr-2">
@@ -195,6 +196,7 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
              )
            })
          } 
+      </div>
       </div>
     </>
   )

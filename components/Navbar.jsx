@@ -39,7 +39,7 @@ const Navbar = ({category}) => {
   // }
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow-xl ">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow-xl mb-6">
         <div className="container-fluid">
           <NavLink href="/"><img src="/images/logo.png" alt="Manuscripts.tech" className='mr-2' width={50} height={50} /></NavLink><NavLink href="/"><a className="navbar-brand poppins font-bold" href="/">Manuscripts</a></NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

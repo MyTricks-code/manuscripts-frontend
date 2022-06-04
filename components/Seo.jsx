@@ -20,10 +20,6 @@ const Seo = ({ item }) => {
       <meta property="og:image:secure_url" content={"https://manuscripts.techc/images/logo.png" || `${process.env.NEXT_PUBLIC_STRAPI_URL}` + item.attributes.thumbnail.data.attributes.url} />
       <meta property="og:site_name" content="Manuscripts" />
       <meta property="og:locale" content="en_US" />
-      <meta name="robots" content="index,follow" />
-      <meta name="googlebot" content="index,follow" />
-      <meta name="bingbot" content="index,follow" />
-      <meta name="distribution" content="global" />
       <meta name="copyright" content="2022 Manuscripts" />
       <meta name="author" content="Manuscripts" />
 
