@@ -9,7 +9,7 @@ const FeaturedPost = ({item}) => {
     item.map((posts)=>{
         // console.log(item)
         return (
-        posts.attributes.featured == true? <p className='text-lg font-semibold hover:no-underline border-2 my-2 hover:shadow-md rounded px-2 mx-2'> <Link href={`/posts/${posts.attributes.slug}`}>{posts.attributes.title }</Link></p> : null
+        posts.attributes.featured == true? <p className='text-lg font-semibold hover:no-underline border-2 my-2 hover:shadow-md rounded px-2 mx-2'> <Link href={`/article/${posts.attributes.slug}`}>{posts.attributes.title }</Link></p> : null
         )
     })    
     }</div>

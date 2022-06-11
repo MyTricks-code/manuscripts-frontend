@@ -9,7 +9,7 @@ const CategoryCard = ({item, category}) => {
   return (
     <div>
       <Seo item={seo}/>
-      <Link  href={`/posts/${item.attributes.slug}`}>
+      <Link  href={`/article/${item.attributes.slug}`}>
     <section>
     <div className="md:pb-12 m-4 relative overflow-hidden p-1 mb-2 rounded shadow-lg" key={item.attributes.slug}>
     <div className="rounded-lg lg:p-2 lg:pb-6 m-2" key={item.attributes.slug}>
@@ -22,7 +22,7 @@ const CategoryCard = ({item, category}) => {
       <p className="leading-relaxed text-center text-base">{item.attributes.description}</p>
     </div>
     <div className="text-center">
-    <Link key={item.attributes.slug} href={`/posts/${item.attributes.slug}`}><button className='btn text-center rounded-md bg-cyan-600 hover:bg-blue-600 text-white p-2 mb-3 md:p-3' item={item}>Read More!</button></Link>
+    <Link key={item.attributes.slug} href={`/article/${item.attributes.slug}`}><button className='btn text-center rounded-md bg-cyan-600 hover:bg-blue-600 text-white p-2 mb-3 md:p-3' item={item}>Read More!</button></Link>
     </div>
     </div>
     </section>
