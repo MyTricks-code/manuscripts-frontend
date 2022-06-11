@@ -54,17 +54,33 @@ const slug = ({category , posts, meta}) => {
 
 export default slug
 
-export async function getStaticProps(context) {
+export async function getStaticProps({params}) {
     let headers = {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
     }
-    let url = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/categories?filters[slug]=` + context.query.slug + "&populate=*" , {headers:headers})
+    let url = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/categories?filters[slug]=` + params.slug + "&populate=*" , {headers:headers})
     let post = await url.json()
     return {
       props: {
         category : post.data[0],
         posts : post.data[0].attributes.posts.data,
+        revalidate: 1,
         // meta : post.data[0].meta.pagination
       }
     }
+}
+
+export async function getStaticPaths(){
+  let headers = {
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
+  }
+  let url = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/categories`, {headers:headers})
+  let res = await url.json()
+  return {
+    paths : res.data.map(post=> ({
+      params : {slug: String(post.attributes.slug)},
+    })),
+    fallback : false
+  }
+
 }
