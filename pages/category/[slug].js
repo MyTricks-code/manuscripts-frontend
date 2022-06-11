@@ -54,7 +54,7 @@ const slug = ({category , posts, meta}) => {
 
 export default slug
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
     let headers = {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
     }

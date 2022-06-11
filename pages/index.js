@@ -53,7 +53,7 @@ export default function Home(props) {
   return (
     <>
     <Seo item={item}/>
-    <div className='flex align-middle justify-center mt-2'>
+    <div className='flex align-middle justify-center mt-16'>
     <form className="d-flex mt-3" role="search">
       <input className="form-control me-2" type="text" placeholder="Search" id="searchBar" ref={searchQuery} aria-label="Search" />
     <button className="btn btn-outline-success" type="submit" onClick={(event)=>{searchFunction(), event.preventDefault()}}>Search</button>
@@ -92,6 +92,7 @@ export default function Home(props) {
           })
         }
       </InfiniteScroll>
+      
     </>
   )
 }
