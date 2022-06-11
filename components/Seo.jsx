@@ -5,13 +5,13 @@ const Seo = ({ item }) => {
   return (
     <Head>
       <title>{item.attributes.title} | Manuscripts.tech</title>
-      <meta property="og:title" content={"Manuscript.tech"} />
-      <meta name='favicon' content='/images/logo.png' />
+      <meta property="og:title" content={item.attributes.title || "Manuscript.tech"} />
       <meta name="twitter:title" content={"Manuscript.tech"} />
       <meta name="description" content={item.attributes.metaDescription || "Manuscripts.tech is a journal and ed-tech blog producing site. Get the top class content, blogs and tech updates here at manuscripts. We aim to become the acronym of manuscripts for tech era."} />
-      <meta name="keywords" content={item.attributes.metaDescription || "Manuscripts.tech, Ed-tech blogs, manuscripts of the tech era, manuscripts journal"} />
-      <meta name="twitter:description" content={item.attributes.keywords || "Get the top class content, blogs and tech updates here at manuscripts. Manuscripts is journal that produces awesome ed-tech content for everyone"} />
-      <meta name="og:image" content={"https://www.manuscripts.tech/images/globalShare.png" || item.attributes.thumbnail.data.attributes.url} />
+      <meta name="keywords" content={item.attributes.keywords || "Manuscripts.tech, Ed-tech blogs, manuscripts of the tech era, manuscripts journal"} />
+      <meta name="twitter:description" content={item.attributes.metaDescription || "Get the top class content, blogs and tech updates here at manuscripts. Manuscripts is journal that produces awesome ed-tech content for everyone"} />
+      <meta name="og:image" content={item.attributes.thumbnail ? item.attributes.thumbnail.data.attributes.url : "https://www.manuscripts.tech/images/globalShare.png"} />
+      {/* <meta name="og:image" content={"https://www.manuscripts.tech/images/globalShare.png" || item.attributes.thumbnail.data.attributes.url} /> */}
       <meta property="og:url" content={"https://manuscripts.tech/" + item.attributes.slug || "https://manuscripts.tech"} />
       <meta property="og:type" content="website" />
       <meta property="og:image:width" content="1024" />

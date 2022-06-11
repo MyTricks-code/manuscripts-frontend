@@ -98,11 +98,14 @@ export default function Home(props) {
 }
 
 
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
+  
+// }
+
+export async function getStaticProps(){
   let headers = {
     Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
   }
-  let options = {populate:"*"}
   let url = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/posts?populate=*&sort=id:DESC&pagination[start]=0&pagination[limit]=6`, {headers:headers})
   let post = await url.json()
   console.log(post)
@@ -110,6 +113,23 @@ export async function getServerSideProps(context) {
     props: {
       post: post.data,
       meta :  post.meta.pagination
-    }
+    },
+    revalidate: 1
   }
 }
+
+// export async function getStaticPaths() {
+//   let headers = {
+//     Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
+//   }
+//   let url = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/posts`, {headers:headers})
+//   let post = await url.json()
+  
+  
+//   return {
+//     paths : post.data.map(post=> ({
+//       params : {slug: String(post.attributes.slug)},
+//     })),
+//     fallback : false
+//   }
+// }
