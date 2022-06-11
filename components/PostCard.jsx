@@ -5,7 +5,7 @@ import Moment from 'react-moment'
 const PostCard = ({ item }) => {
   return (
     <div className='shadow-lg bg-white rounded-md mx-3 mb-6'>
-      <Link href={`/posts/${item.attributes.slug}`}>
+      <Link href={`/article/${item.attributes.slug}`}>
         <section className="hover:cursor-pointer relative mb-1">
           <div className="md:pb-12 relative overflow-hidden p-1 mb-2 rounded " key={item.attributes.slug}>
             <div className="rounded-lg lg:p-2 lg:pb-6 " key={item.attributes.slug}>
@@ -29,7 +29,7 @@ const PostCard = ({ item }) => {
               <p className="leading-relaxed text-center text-base">{item.attributes.description}</p>
             </div>
             <div className="text-center">
-              <Link key={item.attributes.slug} href={`/posts/${item.attributes.slug}`}><button className='btn text-center rounded-md bg-cyan-600 hover:bg-blue-600 text-white p-2 mb-3 md:p-3' item={item}>Read More!</button></Link>
+              <Link key={item.attributes.slug} href={`/article/${item.attributes.slug}`}><button className='btn text-center rounded-md bg-cyan-600 hover:bg-blue-600 text-white p-2 mb-3 md:p-3' item={item}>Read More!</button></Link>
             </div>
           </div>
         </section>
