@@ -73,30 +73,30 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
     <div className='mt-16'>
     <Seo item={post}/>
       <div className="flex min-h-screen">
-        <div className="w-52 bg-gray-200 shadow-md border-l-2 hidden lg:flex mr-2">
+        <div className="w-52 bg-gray-200 prose-bg-gray-800 dark:bg-gray-900 shadow-md border-l-2 hidden lg:flex mr-2">
           <div>
             <div className="container py-10 mx-auto flex">
-              <div className="bg-white p-2 rounded shadow-md">
-                <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
-                <p className="leading-relaxed mb-5 text-gray-600">Suggest some changes or tell us how we valued you? FreeLance Projects accepted.</p>
-                <p className="text-xs text-red-500 mt-3 hidden" id='errorInForm'>Please fill all the data</p>
-                <p className='text-sm text-green-500 hidden' id="successSubmitted">Suggestion submitted successfully</p>
+              <div className="bg-gray-100 dark:bg-slate-600 p-2 rounded shadow-md">
+                <h2 className="text-gray-900 da text-lg mb-1 font-medium title-font">Feedback</h2>
+                <p className="leading-relaxed mb-5 text-gray-600 dark:text-white">Suggest some changes or tell us how we valued you? FreeLance Projects accepted.</p>
+                <p className="text-xs text-red-500 mt-3 hidden dark:text-white" id='errorInForm'>Please fill all the data</p>
+                <p className='text-sm text-green-500 hidden dark:text-white' id="successSubmitted">Suggestion submitted successfully</p>
                 <div className="relative mb-4">
-                  <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
+                  <label htmlFor="name" className="leading-7 text-sm text-gray-600 dark:text-white">Name</label>
                   <input type="name" id="name" name="name" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
                 <div className="relative mb-4">
-                  <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
+                  <label htmlFor="email" className="leading-7 text-sm text-gray-600  dark:text-white">Email</label>
                   <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
                 <div className="relative mb-4">
-                  <label htmlFor="message" className="leading-7 text-sm text-gray-600">Message</label>
+                  <label htmlFor="message" className="leading-7 text-sm text-gray-600 dark:text-white">Message</label>
                   <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                 </div>
                 <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={() => { submitForm(token) }}>Submit</button>
               </div>
             </div>
-            <h3 className='mt-2 text-lg font-bold text-gray-700'>Browse Categories</h3>
+            <h3 className='mt-2 text-lg font-bold text-gray-700 dark:text-white'>Browse Categories</h3>
             <div className='mx-2'>
               {
                 categoryPost.map((item)=>{
@@ -113,24 +113,24 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
         </div>
         <div className='flex-1 shadow-lg mt-3'>
           <main>
-            <div className="flex justify-between py-3 align-middle mt-2"><h1 className='mx-auto text-3xl md:text-4xl text-gray-700 font-bold text-center mb-4 '>{post.attributes.title}</h1>
+            <div className="flex justify-between py-3 align-middle mt-2"><h1 className='mx-auto text-3xl md:text-4xl dark:text-white text-gray-700 font-bold text-center mb-4 '>{post.attributes.title}</h1>
             </div>
             <section className="text-gray-600 body-font border-b-2 border-gray-400 -mb-8 lg:-mb-14">
               <div className="flex align-middle justify-center">
                 <div className="inline-block md:inline-flex py-2 z-10">
                   <Link href={`/category/${post.attributes.category.data.attributes.slug}`}>
-                    <div className="text-xl lg:px-2 text-indigo-600 hover:text-blue-600 hover:shadow-sm rounded hover:bg-cyan-200 hover:cursor-pointer">Category: &nbsp;
+                    <div className="text-xl lg:px-2 text-indigo-600 hover:text-blue-600 hover:shadow-sm rounded hover:bg-cyan-200 hover:cursor-pointer ">Category: &nbsp;
                       <small className='text-lg font-bold'>
                         {post.attributes.category.data.attributes.name}
                       </small>
                     </div>
                   </Link>
-                  <div className="text-xl lg:px-2">Created on: &nbsp;
+                  <div className="text-xl lg:px-2 dark:text-slate-100">Created on: &nbsp;
                     <small>
                       <Moment format='MMM Do ,YYYY'>{post.attributes.createdAt}</Moment>
                     </small>
                   </div>
-                  <div className="text-xl lg:px-2">Last Updated: &nbsp;
+                  <div className="text-xl lg:px-2 dark:text-slate-100">Last Updated: &nbsp;
                     <small>
                       <Moment format='MMM Do ,YYYY'>{post.attributes.publishedAt}</Moment>
                     </small>
@@ -148,11 +148,11 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
             <article>
               <div 
               
-              className='flex align-middle justify-center mb-4 border-b-2 border-gray-500 mx-2'>
+              className='flex align-middle justify-center mb-4 border-b-2 border-gray-500 mx-2 dark:text-white'>
                 <ReactMarkdown
                   children={post.attributes.content}
                   escapeHtml={false}
-                  className = "prose prose-lg xl:prose-xl prose-img:border-2px prose-img:border-gray-600 prose-h1:underline prose-a:bg-cyan-200 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline prose-code:max-w-xl"
+                  className = "dark:prose-headings:text-white dark:text-white dark:prose-blockquote:text-white dark:prose-strong:text-gray-200 prose-lg prose xl:prose-xl prose-img:border-2px prose-img:border-gray-600 prose-h1:underline prose-a:bg-cyan-400 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline prose-code:max-w-xl dark:prose-code:text-gray-200"
                   style={{ textDecoration: 'none' }}
                  /> 
               </div>
@@ -170,10 +170,10 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
             <VKShareButton url={url}><VKIcon size={32} round={true} /></VKShareButton>
           </div>
         </div>
-        <div className="w-52 px-0 bg-gray-200 shadow-sm border-l-2 hidden md:flex  ml-0 lg:ml-2">
+        <div className="w-52 px-0 bg-gray-200 dark:bg-gray-800 shadow-sm border-l-2 hidden md:flex  ml-0 lg:ml-2">
         <div className='mt-4'>
-          <h3 className='text-2xl font-semibold'>Table of contents</h3>
-          <div className='border-l-4 border-blue-500'>
+          <h3 className='text-2xl font-semibold dark:text-neutral-100'>Table of contents</h3>
+          <div className='border-l-4 border-blue-500 dark:text-neutral-50'>
         {
           headings.map((item)=>{
             return(
@@ -187,7 +187,7 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
         </div>
         </div>
       </div>
-      <h3 className='text-3xl text-center mt-4 font-bold'>More From us </h3>
+      <h3 className='text-3xl text-center mt-4 font-bold dark:text-neutral-50'>More From us </h3>
       <div className='mt-8 grid align-between grid-cols-1 lg:grid-cols-3'>
          { 
            morePost.slice(0,6).map((item)=>{

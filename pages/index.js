@@ -59,6 +59,13 @@ export default function Home(props) {
     <button className="btn btn-outline-success" type="submit" onClick={(event)=>{searchFunction(), event.preventDefault()}}>Search</button>
     </form>
     </div>
+    
+    <div className="flex align-middle justify-center"></div>
+    <div id="other-item-cards" className="border-r-4  border-b-slate-400 lg:border-slate-400">
+        <FeaturedPost  item={Posts} key={Math.random()}/>
+        {/* <h1 className='text-4xl font-bold underline text-center'>News</h1> */}
+        {/* <NewsCard item={props.post}/> */}
+    </div>
     <InfiniteScroll
         dataLength={Posts.length}
         next={getMorePost}
@@ -69,15 +76,8 @@ export default function Home(props) {
           <img src="/images/accomplish.gif" alt="accomplish" />
         </p>
         }
-        className="mt-8 grid align-between grid-cols-1 lg:grid-cols-3"
+        className="mt-8 flex-1 grid align-between grid-cols-1 lg:grid-cols-3"
     >
-        <div id="other-item-cards" className="border px-2">
-        <div className="border-r-4 border-b-slate-400 lg:border-slate-400">
-        <FeaturedPost item={Posts} key={Math.random()}/>
-        {/* <h1 className='text-4xl font-bold underline text-center'>News</h1> */}
-        {/* <NewsCard item={props.post}/> */}
-        </div>
-        </div>
         
         
         {

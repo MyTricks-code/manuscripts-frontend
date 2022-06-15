@@ -4,12 +4,12 @@ import Link from "next/link"
 const Footer = () => {
     return (
         <div>
-            <footer className="text-center lg:text-left bg-gray-100 text-gray-600 mt-3">
+            <footer className="text-center lg:text-left dark:bg-slate-700 bg-gray-100 text-gray-600 mt-3">
                 <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
-                    <div className="mr-12 hidden lg:block">
+                    <div className="mr-12 hidden lg:block dark:text-gray-100">
                         <span>Get connected with us on social networks:</span>
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center dark:bg-zinc-50">
                         <a href="#!" className="mr-6 text-gray-600">
                             <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
                                 className="w-2.5" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +73,7 @@ const Footer = () => {
             items-center
             justify-center
             md:justify-start
+            dark:text-gray-100
           ">
                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cubes"
                                     className="w-4 mr-3" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -83,49 +84,49 @@ const Footer = () => {
                                 </svg>
                                 Manuscripts
                             </h6>
-                            <p>
+                            <p className='dark:text-gray-100'>
                                 Here we write not only awesome blogs, but the correct knowledge. We focus on quality not quantity! We always tries to be the acronym of Manuscripts for the Tech era.
                             </p>
                         </div>
-                        <div className="">
+                        <div className="dark:text-gray-100">
                             <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
                                 Freelance
                             </h6>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600">React</a>
+                                <a href="#!" className="text-gray-600 dark:text-gray-50">React</a>
+                            </p>
+                            <p className="mb-4"> 
+                                <a href="#!" className="text-gray-600 dark:text-gray-50">Next</a>
                             </p>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600">Next</a>
-                            </p>
-                            <p className="mb-4">
-                                <a href="#!" className="text-gray-600">Django</a>
+                                <a href="#!" className="text-gray-600 dark:text-gray-50">Django</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-gray-600">Strapi</a>
+                                <a href="#!" className="text-gray-600 dark:text-gray-50">Strapi</a>
                             </p>
                         </div>
-                        <div className="">
+                        <div className="dark:text-gray-100">
                             <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
                                 Useful links
                             </h6>
                             <p className="mb-4">
-                                <a href="manuscripts_sitemap.xml" className="text-gray-600">SiteMap</a>
+                                <a href="manuscripts_sitemap.xml" className="text-gray-600 dark:text-gray-50">SiteMap</a>
                             </p>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600">Settings</a>
+                                <a href="#!" className="text-gray-600 dark:text-gray-50">Settings</a>
                             </p>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600">Orders</a>
+                                <a href="#!" className="text-gray-600 dark:text-gray-50">Orders</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-gray-600">Help</a>
+                                <a href="#!" className="text-gray-600 dark:text-gray-50">Help</a>
                             </p>
                         </div>
                         <div className="">
-                            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start dark:text-gray-100">
                                 Contact
                             </h6>
-                            <p className="flex items-center justify-center md:justify-start mb-4">
+                            <p className="flex items-center justify-center md:justify-start mb-4 dark:text-gray-100">
                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home"
                                     className="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                                     <path fill="currentColor"
@@ -134,7 +135,7 @@ const Footer = () => {
                                 </svg>
                                 Kota, Raj 324002, IND
                             </p>
-                            <p className="flex items-center justify-center md:justify-start mb-4">
+                            <p className="flex items-center justify-center md:justify-start mb-4 dark:text-gray-100">
                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope"
                                     className="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512">
@@ -148,9 +149,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="text-center p-6 bg-gray-200">
+                <div className="text-center p-6 bg-gray-200 dark:bg-slate-900">
                     <span>© 2022 Copyright:</span>
-                    <Link href="/"><a className="text-gray-600 font-semibold" >Manuscripts</a></Link>
+                    <Link href="/"><a className="text-gray-600 font-semibold dark:text-neutral-200" >Manuscripts</a></Link>
                 </div>
             </footer>
         </div>
