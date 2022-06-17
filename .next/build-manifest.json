@@ -30,15 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/category": [
+    "/article/[slug]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/category.js"
-    ],
-    "/company": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/company.js"
+      "static/chunks/pages/article/[slug].js"
     ]
   },
   "ampFirstPages": []
