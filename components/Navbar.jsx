@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import NavLink from 'next/link'
 
 
@@ -29,6 +29,25 @@ const Navbar = () => {
     }
     console.log("Hey")
   }
+  useEffect(() => {
+    var addScript = document.createElement('script');
+    addScript.setAttribute('src', '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, [])
+
+const googleTranslateElementInit = () => {
+
+    new window.google.translate.TranslateElement({
+        pageLanguage: 'en',
+        // includedLanguages : "en,ms,ta,zh-CN", // include this for selected languages
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element');
+      
+    }
+    
+    // document.getElementsByClassName("goog-te-gadget-simple").style = "background : Blue"
   return (
     <>
       <nav className="navbar navbar-expand-lg dark:bg-white bg-dark navbar-dark fixed-top shadow-xl mb-6">
@@ -40,15 +59,20 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item mt-2">
-                <button className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-cyan-500" onClick={modeChanger}>
+                <button className="text-white px-2 py-1 rounded hover:bg-cyan-500" onClick={modeChanger}>
                   {icon}
                 </button>
               </li>
               <li className="nav-item">
                 <NavLink href="/" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white'>Home</a></NavLink>
               </li>
+              {/* <div className='rounded container max-h-90 w-full flex align-middle justify-center h-10' id='google_translate_element'>
+              </div> */}
               <li className="nav-item">
-                <NavLink href="/category" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white'>Category</a></NavLink>
+                <a target="_blank" href="https://www.youtube.com/channel/UCJtaeZ3hMmGNPrgeien3uIQ" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white ml-2'>Youtube</a></a>
+              </li>
+              <li className="nav-item">
+                <NavLink href="/category" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white ml-2'>Category</a></NavLink>
               </li>
               <li className="nav-item">
                 <NavLink href="/company" activeClassName='nav-link active' exact={true}><a className="nav-link font-bold font-white text-white">Company</a></NavLink>

@@ -98,9 +98,6 @@ export default function Home(props) {
 }
 
 
-// export async function getServerSideProps(context) {
-  
-// }
 
 export async function getStaticProps(){
   let headers = {
@@ -118,18 +115,3 @@ export async function getStaticProps(){
   }
 }
 
-// export async function getStaticPaths() {
-//   let headers = {
-//     Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
-//   }
-//   let url = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/posts`, {headers:headers})
-//   let post = await url.json()
-  
-  
-//   return {
-//     paths : post.data.map(post=> ({
-//       params : {slug: String(post.attributes.slug)},
-//     })),
-//     fallback : false
-//   }
-// }
