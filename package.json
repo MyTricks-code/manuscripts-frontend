@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "infinite-scroll": "^4.0.1",
+    "js-cookie": "^3.0.1",
     "moment": "^2.29.3",
     "next": "12.1.6",
     "next-themes": "^0.2.0",

@@ -6,28 +6,23 @@ import Seo from '../components/Seo'
 import FeaturedPost from '../components/FeaturedPost'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loader from '../components/Loader'
+import { useRouter } from 'next/router'
 
 export default function Home(props) {
 
+  const router = useRouter()
   const [Posts, setPosts] = useState(props.post)
-  
-  const searchQuery = useRef(null)
-
   const [meta , setMeta] = useState(props.meta)
   
-  const searchFunction = async()=>{
-    console.log("clicked")
-    let headers = {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
+  // search
+  const [term, setTerm] =useState()
+  const searchFunction = (e)=>{
+    e.preventDefault()
+    if(term===""){
+      setTerm("Enter Here")
+    } else {
+      router.push(`/article/search?term=${term}`)
     }
-    const searchUrl = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/posts?populate=*&sort=id:DESC&_q=${document.getElementById("searchBar").value}` , {
-      headers : headers
-    })
-    const searchResult = await searchUrl.json()
-    document.getElementById("other-item-cards").classList.add("hidden")
-    console.log(searchResult)
-    setPosts(searchResult.data)
-    setMeta(searchResult.meta.pagination.total)
   }
 
   const item= {"attributes" : {
@@ -54,10 +49,16 @@ export default function Home(props) {
     <>
     <Seo item={item}/>
     <div className='flex align-middle justify-center mt-16'>
-    <form className="d-flex mt-3" role="search">
-      <input className="form-control me-2" type="text" placeholder="Search" id="searchBar" ref={searchQuery} aria-label="Search" />
-    <button className="btn btn-outline-success" type="submit" onClick={(event)=>{searchFunction(), event.preventDefault()}}>Search</button>
-    </form>
+    <form className="d-flex pt-4" onSubmit={searchFunction}>
+        <input 
+        className="form-control me-2" 
+        type="text" 
+        value={term}
+        placeholder="Search"  
+        aria-label="Search"  
+        onChange={(e)=>setTerm(e.target.value)} />
+        <button className="btn btn-outline-success" type="submit" onClick={searchFunction}>Search</button>
+      </form>
     </div>
     
     <div className="flex align-middle justify-center"></div>
