@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps}) {
   </Head>
   <Navbar/>
   <NextNProgress
-  color="#4b0082"
+  color="#eeeee4"
   startPosition={0.3}
   stopDelayMs={200}
   height={3}
