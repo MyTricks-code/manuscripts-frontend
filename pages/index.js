@@ -8,23 +8,13 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Loader from '../components/Loader'
 import { useRouter } from 'next/router'
 
+
 export default function Home(props) {
 
   const router = useRouter()
   const [Posts, setPosts] = useState(props.post)
   const [meta , setMeta] = useState(props.meta)
   
-  // search
-  const [term, setTerm] =useState()
-  const searchFunction = (e)=>{
-    e.preventDefault()
-    if(term===""){
-      setTerm("Enter Here")
-    } else {
-      router.push(`/article/search?term=${term}`)
-    }
-  }
-
   const item= {"attributes" : {
     title : "Home"
   }}
@@ -48,21 +38,9 @@ export default function Home(props) {
   return (
     <>
     <Seo item={item}/>
-    <div className='flex align-middle justify-center mt-16'>
-    <form className="d-flex pt-4" onSubmit={searchFunction}>
-        <input 
-        className="form-control me-2" 
-        type="text" 
-        value={term}
-        placeholder="Search"  
-        aria-label="Search"  
-        onChange={(e)=>setTerm(e.target.value)} />
-        <button className="btn btn-outline-success" type="submit" onClick={searchFunction}>Search</button>
-      </form>
-    </div>
     
     <div className="flex align-middle justify-center"></div>
-    <div id="other-item-cards" className="border-r-4  border-b-slate-400 lg:border-slate-400">
+    <div id="other-item-cards" className="border-r-4 mt-16  border-b-slate-400 lg:border-slate-400">
         <FeaturedPost  item={Posts} key={Math.random()}/>
         {/* <h1 className='text-4xl font-bold underline text-center'>News</h1> */}
         {/* <NewsCard item={props.post}/> */}
@@ -77,7 +55,7 @@ export default function Home(props) {
           <img src="/images/accomplish.gif" alt="accomplish" />
         </p>
         }
-        className="mt-8 flex-1 grid align-between grid-cols-1 lg:grid-cols-3"
+        className="mt-8 flex-1 grid align-between grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     >
         
         

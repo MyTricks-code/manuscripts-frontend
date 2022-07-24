@@ -73,9 +73,9 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
     <div className='mt-16'>
     <Seo item={post}/>
       <div className="flex min-h-screen">
-        <div className="w-52 bg-gray-200 prose-bg-gray-800 dark:bg-gray-900 shadow-md border-l-2 hidden lg:flex mr-2">
+        <div className="w-52 bg-gray-200 prose-bg-gray-800 dark:bg-gray-900 shadow-md border-l-2 hidden  mr-2 lg:flex">
           <div>
-            <div className="container py-10 mx-auto flex">
+            <div className="container  py-10 mx-auto flex">
               <div className="bg-gray-100 dark:bg-slate-600 p-2 rounded shadow-md">
                 <h2 className="text-gray-900 da text-lg mb-1 font-medium title-font">Feedback</h2>
                 <p className="leading-relaxed mb-5 text-gray-600 dark:text-white">Suggest some changes or tell us how we valued you? FreeLance Projects accepted.</p>
@@ -117,7 +117,7 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
             </div>
             <section className="text-gray-600 body-font border-b-2 border-gray-400 -mb-8 lg:-mb-14">
               <div className="flex align-middle justify-center">
-                <div className="inline-block md:inline-flex py-2 z-10">
+                <div className="inline-block md:inline-flex py-2">
                   <Link href={`/category/${post.attributes.category.data.attributes.slug}`}>
                     <div className="text-xl lg:px-2 text-indigo-600 hover:text-blue-600 hover:shadow-sm rounded hover:bg-cyan-200 hover:cursor-pointer ">Category: &nbsp;
                       <small className='text-lg font-bold'>
