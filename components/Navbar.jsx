@@ -108,10 +108,10 @@ md:border-b-4 border-neutral-300 rounded bg-transparent appearance-none focus:ou
               {/* <div className='rounded container max-h-90 w-full flex align-middle justify-center h-10' id='google_translate_element'>
               </div> */}
               <li className="nav-item">
-                <a target="_blank" href="https://www.youtube.com/channel/UCJtaeZ3hMmGNPrgeien3uIQ" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white ml-2'>Youtube</a></a>
+                <a target="_blank" href="https://www.youtube.com/channel/UCJtaeZ3hMmGNPrgeien3uIQ" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white'>Youtube</a></a>
               </li>
               <li className="nav-item">
-                <NavLink href="/category" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white ml-2'>Category</a></NavLink>
+                <NavLink href="/category" activeClassName='nav-link active' exact={true}><a className='nav-link font-bold font-white text-white'>Category</a></NavLink>
               </li>
               <li className="nav-item">
                 <NavLink href="/company" activeClassName='nav-link active' exact={true}><a className="nav-link font-bold font-white text-white">Company</a></NavLink>

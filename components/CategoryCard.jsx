@@ -11,7 +11,7 @@ const CategoryCard = ({item, category}) => {
       <Seo item={seo}/>
       <Link  href={`/article/${item.attributes.slug}`}>
     <section>
-    <h1 className='text-3xl font-bold text-center mt-12 dark:text-neutral-100'>Our {category.attributes.name} Blogs</h1>
+    
     <div className="md:pb-12 m-4 relative overflow-hidden p-1 mb-2 rounded shadow-lg bg-neutral-100 dark:bg-gray-700" key={item.attributes.slug}>  
     <div className="rounded-lg lg:p-2 lg:pb-6 m-2" key={item.attributes.slug}>
       <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">{category.attributes.name}</h3>

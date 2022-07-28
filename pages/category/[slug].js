@@ -32,7 +32,7 @@ const slug = ({category , posts, meta}) => {
     </form> */}
     </div>
       <div className="mx-2 lg:mx-4 text-center">
-        {/* <h1 className='text-4xl font-bold underline text-center'>{category.attributes.name}</h1> */}
+      <h1 className='text-3xl font-bold text-center mt-12 dark:text-neutral-100'>Our {category.attributes.name} Blogs</h1>
         <div className="border-slate-400">
         </div>
         {
