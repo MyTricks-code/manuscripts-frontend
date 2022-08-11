@@ -18,6 +18,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://www.manuscripts.tech/article/aditya-l1</loc>
+  <lastmod>2022-08-11T17:38:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://www.manuscripts.tech/article/Dates-of-Nationalism-In-Europe</loc>
   <lastmod>2022-07-30T17:38:17+00:00</lastmod>
   <priority>0.80</priority>
@@ -57,7 +62,4 @@
   <lastmod>2022-06-11T15:38:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
-
-
 </urlset>

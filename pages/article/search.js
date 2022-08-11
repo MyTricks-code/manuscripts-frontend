@@ -1,11 +1,18 @@
 import { useRouter } from "next/router"
 import PostCard from "../../components/PostCard"
+import Seo from "../../components/Seo"
 
 export default function Search({posts, meta}){
     console.log(posts)
     const router = useRouter()
+    const item= {"attributes" : {
+      title : "Search",
+      description : `Search for ${router.query.term} in Manuscripts.tech`,
+      metaDescription : `Search for ${router.query.term} in Manuscripts.tech`
+    }}
     return(
         <>
+        <Seo item={item}/>
         <div className='shadow-lg mt-16 pb-4'> 
         <h1 className='text-4xl font-bold text-center pt-6  dark:text-neutral-200'>Search Results</h1>
         <p className="text-center font-bold text-xl pt-6 dark:text-gray-50">About {meta.pagination.total} search results for the term "<span className='text-slate-700 underline dark:text-neutral-300 dark:decoration-red-600'>{router.query.term}</span>"</p>

@@ -110,16 +110,16 @@ const Footer = () => {
                                 Useful links
                             </h6>
                             <p className="mb-4">
-                                <a href="manuscripts_sitemap.xml" className="text-gray-600 dark:text-gray-50">SiteMap</a>
+                                <a href="/manuscripts_sitemap.xml" className="text-gray-600 dark:text-gray-50">Site Map</a>
                             </p>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600 dark:text-gray-50">Settings</a>
+                                <a href="/privacy_policy" className="text-gray-600 dark:text-gray-50">Privacy Policy</a>
                             </p>
                             <p className="mb-4">
-                                <a href="#!" className="text-gray-600 dark:text-gray-50">Orders</a>
+                                <a href="https://www.fiverr.com/vishal_goswami_?public_mode=true" className="text-gray-600 dark:text-gray-50" target="_blank">Orders</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-gray-600 dark:text-gray-50">Help</a>
+                                <a href="https://www.fiverr.com/vishal_goswami_?public_mode=true" target={"_blank"} className="text-gray-600 dark:text-gray-50">Help</a>
                             </p>
                         </div>
                         <div className="">
