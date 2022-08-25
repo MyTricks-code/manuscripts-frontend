@@ -148,11 +148,11 @@ const PostDetail = ({ post, PostData, morePost, categoryPost}) => {
             <article>
               <div 
               
-              className='flex align-middle justify-center mb-4 border-b-2 border-gray-500 mx-2 dark:text-white'>
+              className='flex align-middle justify-center mb-4 border-b-2 border-gray-500 mx-2 dark:text-white overflow-x-hidden'>
                 <ReactMarkdown
                   children={post.attributes.content}
                   escapeHtml={false}
-                  className = "dark:prose-headings:text-white dark:text-white prose-iframe:object-contain dark:prose-blockquote:text-white dark:prose-strong:text-gray-200 prose-lg prose xl:prose-xl prose-img:border-2px prose-img:border-gray-600 prose-h1:underline prose-a:bg-cyan-400 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline prose-code:max-w-xl dark:prose-code:text-gray-200"
+                  className = "dark:prose-headings:text-white dark:prose-pre:bg-neutral-700 prose-pre:whitespace-pre prose-code:overflow-x-auto dark:text-white prose-pre:max-w-sm lg:prose-pre:max-w-6xl prose-iframe:object-contain dark:prose-blockquote:text-white dark:prose-strong:text-gray-200 prose-lg prose xl:prose-xl prose-img:border-2px prose-img:border-gray-600 prose-h1:underline prose-a:bg-cyan-400 hover:prose-a:bg-blue-200 hover:prose-a:no-underline prose-a:no-underline dark:prose-code:text-gray-300"
                   style={{ textDecoration: 'none' }}
                  /> 
               </div>
