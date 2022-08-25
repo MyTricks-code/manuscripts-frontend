@@ -27,8 +27,7 @@ function MyApp({ Component, pageProps}) {
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5303359554216037"
-     crossOrigin="anonymous"></script>
+      
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -45,6 +44,8 @@ function MyApp({ Component, pageProps}) {
       />
   <Head>
     <title>Manuscripts</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5303359554216037"
+     crossOrigin="anonymous"></script>
   </Head>
   <Navbar/>
   <NextNProgress
